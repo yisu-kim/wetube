@@ -1,4 +1,8 @@
 import express from "express";
+import cookieParser from "cookie-parser";
+import bodyParser from "body-parser";
+import helmet from "helmet";
+import morgan from "morgan";
 
 const app = express();
 const PORT = 3000;
@@ -14,6 +18,12 @@ const handleHome = (req, res) => {
 const handleProfile = (req, res) => {
   res.send("You are on my profile");
 };
+
+app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(helmet());
+app.use(morgan("dev"));
 
 app.get("/", handleHome);
 
