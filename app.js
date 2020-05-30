@@ -3,7 +3,7 @@ import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import morgan from "morgan";
-import indexRouter from "./routes/index";
+import globalRouter from "./routes/global";
 import userRouter from "./routes/users";
 import videoRouter from "./routes/videos";
 import routes from "./routes";
@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
 app.use(locals);
-app.use(routes.index, indexRouter);
+app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
 app.use(routes.videos, videoRouter);
 
