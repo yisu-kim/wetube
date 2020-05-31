@@ -29,7 +29,15 @@ export const logout = (req, res) =>
 
 export const userDetail = (req, res) =>
   res.render("userDetail", { pageTitle: "User Detail" });
-export const editProfile = (req, res) =>
+
+export const getEditProfile = (req, res) =>
   res.render("editProfile", { pageTitle: "Edit Profile" });
+export const postEditProfile = (req, res) => {
+  const {
+    body: { name, email },
+  } = req;
+  res.render("userDetail", { pageTitle: "User Detail" });
+};
+
 export const changePassword = (req, res) =>
   res.render("changePassword", { pageTitle: "Change Password" });
