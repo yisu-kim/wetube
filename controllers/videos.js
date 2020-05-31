@@ -24,7 +24,20 @@ export const postUpload = (req, res) => {
 
 export const videoDetail = (req, res) =>
   res.render("videoDetail", { pageTitle: "Video Detail" });
-export const editVideo = (req, res) =>
-  res.render("editVideo", { pageTitle: "Edit Video" });
+
+export const getEditVideo = (req, res) => {
+  const {
+    params: { id },
+  } = req;
+  res.render("editVideo", { pageTitle: "Edit Video", video: videos[0] });
+};
+export const postEditVideo = (req, res) => {
+  const {
+    params: { id },
+    body: { title, description },
+  } = req;
+  res.render("videoDetail", { pageTitle: "Video Detail" });
+};
+
 export const deleteVideo = (req, res) =>
   res.render("deleteVideo", { pageTitle: "Delete Video" });
