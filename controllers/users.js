@@ -39,5 +39,16 @@ export const postEditProfile = (req, res) => {
   res.render("userDetail", { pageTitle: "User Detail" });
 };
 
-export const changePassword = (req, res) =>
+export const getChangePassword = (req, res) =>
   res.render("changePassword", { pageTitle: "Change Password" });
+export const postChangePassword = (req, res) => {
+  const {
+    body: { oldPassword, newPassword, newPassword2 },
+  } = req;
+  if (newPassword !== newPassword2) {
+    res.status(400);
+    res.redirect(routes.users + routes.changePassword);
+  } else {
+    res.render("userDetail", { pageTitle: "User Detail" });
+  }
+};
