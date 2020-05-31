@@ -39,5 +39,10 @@ export const postEditVideo = (req, res) => {
   res.render("videoDetail", { pageTitle: "Video Detail" });
 };
 
-export const deleteVideo = (req, res) =>
-  res.render("deleteVideo", { pageTitle: "Delete Video" });
+export const deleteVideo = (req, res) => {
+  const {
+    params: { id },
+  } = req;
+  // To Do: Delete video
+  res.redirect(routes.home);
+};
