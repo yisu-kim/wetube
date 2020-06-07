@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import routes from "./routes";
+import multer from "multer";
 
 export const locals = (req, res, next) => {
   res.locals.siteName = "WeTube";
@@ -10,3 +11,5 @@ export const locals = (req, res, next) => {
   };
   next();
 };
+
+export const uploadVideo = multer({ dest: "videos/" });
