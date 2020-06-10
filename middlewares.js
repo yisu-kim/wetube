@@ -12,4 +12,4 @@ export const locals = (req, res, next) => {
   next();
 };
 
-export const uploadVideo = multer({ dest: "videos/" });
+export const uploadVideo = multer({ dest: "uploads/videos/" });
