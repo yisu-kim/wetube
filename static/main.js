@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./assets/js/main.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -91,7 +91,6 @@
   !*** ./assets/js/main.js ***!
   \***************************/
 /*! no exports provided */
-/***/ (function(module, exports) {
 
 eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nError: ENOENT: no such file or directory, open '/mnt/c/Users/YISU/Documents/wetube-origin/assets/js/main.js'\");\n\n//# sourceURL=webpack:///./assets/js/main.js?");
 
@@ -3573,6 +3572,3 @@ eval("/**\n * Copyright (c) 2014-present, Facebook, Inc.\n *\n * This source cod
 
 eval("__webpack_require__(/*! @babel/polyfill */\"./node_modules/@babel/polyfill/lib/index.js\");\nmodule.exports = __webpack_require__(/*! /mnt/c/Users/YISU/Documents/wetube-origin/assets/js/main.js */\"./assets/js/main.js\");\n\n\n//# sourceURL=webpack:///multi_@babel/polyfill_./assets/js/main.js?");
 
-/***/ })
-
-/******/ });
