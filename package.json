@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint --fix .",
     "dev:server": "nodemon --exec babel-node init.js",
-    "dev:assets": "WEBPACK_ENV=development webpack",
+    "dev:assets": "WEBPACK_ENV=development webpack -w",
     "build:assets": "WEBPACK_ENV=production webpack"
   },
   "repository": {
@@ -16,6 +16,7 @@
   "author": "Yisu Kim",
   "license": "ISC",
   "dependencies": {
+    "@babel/polyfill": "^7.10.1",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
@@ -24,7 +25,6 @@
     "mongoose": "^5.9.16",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
-    "node-sass": "^4.14.1",
     "pug": "^3.0.0"
   },
   "devDependencies": {
@@ -32,12 +32,14 @@
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.10.0",
     "autoprefixer": "^9.8.0",
+    "babel-loader": "^8.1.0",
     "css-loader": "^3.6.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.20.2",
     "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^8.0.2",

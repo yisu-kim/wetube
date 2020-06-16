@@ -20,6 +20,7 @@ app.use(morgan("dev"));
 app.use(locals);
 
 app.use("/uploads", express.static("uploads"));
+app.use("/static", express.static("static"));
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
 app.use(routes.videos, videoRouter);

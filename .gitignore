@@ -120,3 +120,6 @@ git-commit-template.txt
 
 # video files
 uploads/
+
+# static files
+static/

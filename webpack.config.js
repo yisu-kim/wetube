@@ -7,10 +7,14 @@ const OUTPUT_DIR = path.resolve(__dirname, "static");
 
 module.exports = {
   mode: MODE,
-  entry: ENTRY_FILE,
+  entry: ["@babel/polyfill", ENTRY_FILE],
   plugins: [new MiniCssExtractPlugin({ filename: "styles.css" })],
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        use: ["babel-loader"],
+      },
       {
         test: /\.s[ac]ss$/i,
         use: [
