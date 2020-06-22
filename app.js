@@ -3,9 +3,9 @@ import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import morgan from "morgan";
-import globalRouter from "./routes/global";
-import userRouter from "./routes/users";
-import videoRouter from "./routes/videos";
+import globalRouter from "./routers/global";
+import userRouter from "./routers/users";
+import videoRouter from "./routers/videos";
 import routes from "./routes";
 import { locals } from "./middlewares";
 
