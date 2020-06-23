@@ -1,5 +1,9 @@
 import mongooes from "mongoose";
 import dotenv from "dotenv";
+import "./models/Comment";
+import "./models/User";
+import "./models/Video";
+
 dotenv.config();
 
 mongooes.connect(process.env.MONGODB_HOST, {
