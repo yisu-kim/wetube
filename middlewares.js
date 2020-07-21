@@ -9,4 +9,18 @@ export const locals = (req, res, next) => {
   next();
 };
 
+export const onlyPublic = (req, res, next) => {
+  if (req.user) {
+    return res.redirect(routes.home);
+  }
+  next();
+};
+
+export const onlyPrivate = (req, res, next) => {
+  if (req.user) {
+    return next();
+  }
+  res.redirect(routes.home);
+};
+
 export const uploadVideo = multer({ dest: "uploads/videos/" });
