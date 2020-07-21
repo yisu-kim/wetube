@@ -7,6 +7,7 @@ const SEARCH = "/search";
 
 // users
 const USERS = "/users";
+const ME = "/me";
 const EDIT_PROFILE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
 const USER_DETAIL = "/:id";
@@ -35,6 +36,7 @@ const routes = {
     }
     return USER_DETAIL;
   },
+  me: ME,
   editProfile: EDIT_PROFILE,
   changePassword: CHANGE_PASSWORD,
   videos: VIDEOS,
