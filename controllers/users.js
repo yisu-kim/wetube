@@ -98,20 +98,26 @@ export const postEditProfile = async (req, res) => {
     });
     res.redirect(routes.me);
   } catch (error) {
-    res.render("editProfile", { pageTitle: "Edit Profile" });
+    res.redirect(routes.editProfile);
   }
 };
 
 export const getChangePassword = (req, res) =>
   res.render("changePassword", { pageTitle: "Change Password" });
-export const postChangePassword = (req, res) => {
+export const postChangePassword = async (req, res) => {
   const {
+    user,
     body: { oldPassword, newPassword, newPassword2 },
   } = req;
-  if (newPassword !== newPassword2) {
+  try {
+    if (newPassword !== newPassword2) {
+      res.status(400);
+      return res.redirect(routes.users + routes.changePassword);
+    }
+    await user.changePassword(oldPassword, newPassword);
+    res.redirect(routes.me);
+  } catch (error) {
     res.status(400);
     res.redirect(routes.users + routes.changePassword);
-  } else {
-    res.render("userDetail", { pageTitle: "User Detail" });
   }
 };
