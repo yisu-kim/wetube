@@ -2,9 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  .video__player video {
-    width: 100%;
-    padding: 0 10px;
+  .video__player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    video {
+      width: 95%;
+    }
   }
   .video__info {
     width: 100%;
