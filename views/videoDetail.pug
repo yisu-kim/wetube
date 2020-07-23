@@ -3,7 +3,7 @@ extends layouts/main
 block content
     .video-detail__container
         .video__player
-            video(src=`/${video.fileUrl}`)
+            video(src=`/${video.fileUrl}` controls)
         .video__info
             if loggedUser && video.creator.id === loggedUser.id
                 a(href=routes.editVideo(video.id))
