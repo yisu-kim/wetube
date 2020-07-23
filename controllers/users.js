@@ -66,8 +66,14 @@ export const logout = (req, res) => {
   res.redirect(routes.home);
 };
 
-export const getMe = (req, res) => {
-  res.render("userDetail", { pageTitle: "User Detail", user: req.user });
+export const getMe = async (req, res) => {
+  let { user } = req;
+  try {
+    user = await User.findById(user._id).populate("videos");
+    res.render("userDetail", { pageTitle: "User Detail", user });
+  } catch (error) {
+    res.redirect(routes.home);
+  }
 };
 
 export const userDetail = async (req, res) => {
@@ -75,7 +81,7 @@ export const userDetail = async (req, res) => {
     params: { id },
   } = req;
   try {
-    const user = await User.findById(id);
+    const user = await User.findById(id).populate("videos");
     res.render("userDetail", { pageTitle: "User Detail", user });
   } catch (error) {
     res.redirect(routes.home);
