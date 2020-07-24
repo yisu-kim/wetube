@@ -8,11 +8,12 @@ import MongoStore from "connect-mongo";
 import mongoose, { mongo } from "mongoose";
 import passport from "passport";
 import "./passport";
+import routes from "./routes";
+import { locals } from "./middlewares";
 import globalRouter from "./routers/global";
 import userRouter from "./routers/users";
 import videoRouter from "./routers/videos";
-import routes from "./routes";
-import { locals } from "./middlewares";
+import apiRouter from "./routers/api";
 
 const app = express();
 
@@ -41,5 +42,6 @@ app.use("/static", express.static("static"));
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
 app.use(routes.videos, videoRouter);
+app.use(routes.api, apiRouter);
 
 export default app;
