@@ -41,9 +41,34 @@
     }
   }
   .video__comments {
+    width: 30%;
     margin-top: 25px;
     .video__comment-number {
-      font-size: 18px;
+      font-size: 14px;
+    }
+    .add__comment {
+      margin-top: 15px;
+      width: 100%;
+      input {
+        width: 100%;
+        &::placeholder {
+          color: rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+    .video__comments-list {
+      margin-top: 30px;
+      li {
+        background-color: #3498db;
+        color: white;
+        padding: 15px;
+        border-radius: 20px;
+        border-bottom-right-radius: 0px;
+        word-wrap: break-word;
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+      }
     }
   }
 }
