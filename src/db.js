@@ -6,7 +6,7 @@ import "./models/Video";
 
 dotenv.config();
 
-mongooes.connect(process.env.MONGODB_HOST, {
+mongooes.connect(process.env.MONGODB_HOST_PROD, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

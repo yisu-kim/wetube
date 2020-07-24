@@ -123,3 +123,6 @@ uploads/
 
 # static files
 static/
+
+# build files
+build/

@@ -5,9 +5,14 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --fix .",
-    "dev:server": "nodemon --exec babel-node init.js --ignore 'scss'",
-    "dev:assets": "WEBPACK_ENV=development webpack -w",
-    "build:assets": "WEBPACK_ENV=production webpack"
+    "dev:server": "nodemon --exec babel-node src/init.js --ignore 'scss'",
+    "dev:assets": "cd src && WEBPACK_ENV=development webpack -w",
+    "build:assets": "cd src && WEBPACK_ENV=production webpack",
+    "build:server": "babel src --out-dir build --ignore 'src/assets','src/static','src/webpack.config.js'",
+    "copyAll": "cp -R src/static build && cp -R src/views build && cp -R src/uploads build",
+    "build": "npm run build:server && npm run build:assets && npm run copyAll",
+    "prebuild": "rm -rf build",
+    "start": "node build/init.js"
   },
   "repository": {
     "type": "git",
@@ -35,6 +40,7 @@
     "pug": "^3.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.5",
     "@babel/core": "^7.10.0",
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.10.0",
